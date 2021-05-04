@@ -21,13 +21,13 @@ int main()
     // Ascending Order
     for (i = 0; i < count - 1; i++)
     {
-        for (j = i + 1; j < count; j++)
+        for (j = 0; j < count - i - 1; j++)
         {
-            if (array_1[i] > array_1[j])
+            if (array_1[j] > array_1[j + 1])
             {
-                temp = array_1[i];
-                array_1[i] = array_1[j];
-                array_1[j] = temp;
+                temp = array_1[j];
+                array_1[j] = array_1[j + 1];
+                array_1[j + 1] = temp;
             }
         }
     }
@@ -41,13 +41,13 @@ int main()
     // Decending Order
     for (i = 0; i < count - 1; i++)
     {
-        for (j = i + 1; j < count; j++)
+        for (j = 0; j < count - i - 1; j++)
         {
-            if (array_2[i] < array_2[j])
+            if (array_2[j] < array_2[j + 1])
             {
-                temp = array_2[i];
-                array_2[i] = array_2[j];
-                array_2[j] = temp;
+                temp = array_2[j];
+                array_2[j] = array_2[j + 1];
+                array_2[j + 1] = temp;
             }
         }
     }
