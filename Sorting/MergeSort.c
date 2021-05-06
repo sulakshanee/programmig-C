@@ -4,56 +4,65 @@
 
 void mergeSort(int array_1[], int low, int high)
 {
-    int m = (low + high) / 2;
-
-    mergeSort(array_1, low, m);
-    mergeSort(array_1, m + 1, high);
-
-    int i = low;
-    int j = m + 1;
-    int k = low;
-    int temp[high + 1];
-
-    while (i <= m && j <= high)
+    if (low < high)
     {
-        if (array_1[i] < array_1[j])
+        int m = (low + high) / 2;
+
+        mergeSort(array_1, low, m);
+        mergeSort(array_1, m + 1, high);
+
+        int i = 0;
+        int j = 0;
+        int n1 = m - low + 1;
+        int n2 = high - m;
+
+        int arr_1[n1];
+        int arr_2[n2];
+
+        while (i < n1)
         {
-            temp[k] = array_1[i];
+            arr_1[i] = array_1[low + i];
             i++;
         }
-        else
+
+        while (j < n2)
         {
-            temp[k] = array_1[j];
+            arr_2[j] = array_1[m + 1 + j];
             j++;
         }
-        k++;
-    }
 
-    if (i > m)
-    {
-        while (j <= high)
+        i = 0;
+        j = 0;
+        int k = low;
+
+        while (i < n1 && j < n2)
         {
-            temp[k] = array_1[j];
+            if (arr_1[i] < arr_2[j])
+            {
+                array_1[k] = arr_1[i];
+                i++;
+            }
+            else
+            {
+                array_1[k] = arr_2[j];
+                j++;
+            }
             k++;
-            j++;
         }
-    }
 
-    else
-    {
-        while (i <= m)
+        while (j < n2)
         {
-            temp[k] = array_1[i];
+            array_1[k] = arr_2[j];
+            j++;
             k++;
+        }
+
+        while (i < n1)
+        {
+            array_1[k] = arr_1[i];
             i++;
+            k++;
         }
-    }
-
-    k = low;
-    while (k <= high)
-    {
-        array_1[k] = temp[k];
-        k++;
     }
 }
 
