@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 int top = -1;
-const MAX = 4;
+const MAX = 5;
 int stack[5];
 
 int isFull()
 {
-    if (top == MAX)
+    if (top == MAX - 1)
     {
         return 1;
     }
@@ -67,10 +67,28 @@ int main()
         push(element);
     }
 
+    if (isFull())
+    {
+        printf("Stack is Full.\n");
+    }
+    else
+    {
+        printf("Stack is not Full.\n");
+    }
+
     printf("Display your stack elements -: ");
     while (!isEmpty())
     {
         printf("%d ", pop());
+    }
+
+    if (isEmpty())
+    {
+        printf("\nStack is Empty.");
+    }
+    else
+    {
+        printf("\nStack is not Empty.");
     }
 
     return 0;
