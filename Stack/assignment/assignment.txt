@@ -1,0 +1,16 @@
+The system will generate a number set and A will get the number blocks in the same order while B gets it in the reverse order
+
+According to the values of the blocks taken out by A and B, the system needs to generate the output as a series of 0,1 and 2 and finally display the winner.
+
+a. If the number taken out by A is bigger than B’s, A put away the number taken out. B must put back the number block into the box. System prints 2 on the screen.
+b. If the number picked by A is smaller than B’s, B put away the number taken out. A must put back the number block into the box. System prints 1 on the screen.
+c. If both blocks have the same value, then both A and B put away the number blocks taken out. System prints 0 on the screen.
+
+The winner is the one who took all the number blocks out of the box.
+
+Example:    Input: 5 
+	System generated number set: 27 23 61 44 45 (when x = 3)
+	A’s number set is 27 23 61 44 45 (45 is at the top of the box)
+	B’s number set is 45 44 61 23 27 (27 is at the top of the box)
+	Output: 2 2 2 1 0 1 1 1
+	B is the Winner
